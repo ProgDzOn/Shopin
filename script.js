@@ -29,4 +29,23 @@ updateDateTime();
         }
     });
 
+    // تعطيل النقر بزر الماوس الأيمن
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // تعطيل التحديد
+    document.onselectstart = function () {
+        return false;
+    };
+
+    // تعطيل اختصارات لوحة المفاتيح مثل Ctrl+C
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'C')) {
+            e.preventDefault();
+        }
+    });
+
+
+
 
