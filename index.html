@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0035)http://localhost/Shoping2/index.php -->
+<!-- saved from url=(0048)http://localhost/Shoping2PHP/view_properties.php -->
 <html lang="ar"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +10,15 @@
 <body>
 
 <header>
+<div class="top-bar">
+        <div id="date-time">الاثنين، ٢٩ جمادى الآخرة ١٤٤٦ هـ - ١١:٠١:١٦ ص</div>
+    </div>
     <h1>عرض الألبسة</h1>
     <nav>
         <ul>
-            <li><a href="http://localhost/Shoping2/add_property.php">إضافة الألبسة</a></li>
-            <li><a href="http://localhost/Shoping2/index.php">الرئيسية</a></li>
-            <li><a href="http://localhost/Shoping2/view_properties.php">عرض الألبسة</a></li>
+            <li><a href="http://localhost/Shoping2PHP/add_property.php">إضافة الألبسة</a></li>
+            <li><a href="http://localhost/Shoping2PHP/index.php">الرئيسية</a></li>
+            <li><a href="http://localhost/Shoping2PHP/view_properties.php">عرض الألبسة</a></li>
         </ul>
     </nav>
 </header>
@@ -45,199 +48,27 @@
     transform: translateY(0);  /* إرجاع الزر للمكان الأصلي عند الضغط */
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);  /* تصغير الظل عند الضغط */
 }
-    /* تنسيق عام */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f1f1f1;
-    margin: 0;
-    padding: 0;
-    direction: rtl;
-    color: #333;
-}
-
-/* تنسيق الحاوية */
-.container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-/* تنسيق الهيدر */
-header {
-    background-color: #333;
-    color: white;
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    margin: 0;
-    padding-left: 30px;
-    font-size: 32px;
-    font-weight: 600;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-    margin-top: 10px;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 30px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ff5722;
-}
-
-/* تنسيق عرض المنتجات */
-.properties-container {
-    padding: 40px 0;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.property-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-
-/* تنسيق كل منتج */
-.property {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.property:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-/* تنسيق الصورة داخل المنتج */
-.property-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.property-image:hover {
-    transform: scale(1.05);
-}
-
-/* تنسيق تفاصيل المنتج */
-.property-details {
-    padding-top: 15px;
-    text-align: center;
-}
-
-.property-details h3 {
-    font-size: 22px;
-    font-weight: 600;
-    color: #333;
-}
-
-.property-details .description {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-/* تنسيق الأزرار */
-.btn-buy {
-    display: inline-block;
-    padding: 15px 25px;
-    background-color: #00ff40;  /* اللون الأزرق */
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
-    margin-top: 20px;
-}
-
-.btn-buy:hover {
-    background-color: #0056b3;  /* تغيير اللون عند التمرير */
-    transform: translateY(-2px);  /* رفع الزر قليلاً عند التمرير */
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);  /* تأثير الظل عند التمرير */
-}
-
-.btn-buy:active {
-    transform: translateY(0);  /* إرجاع الزر للمكان الأصلي عند الضغط */
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);  /* تصغير الظل عند الضغط */
-}
-
-
-/* التنقل بين الصفحات */
-.pagination {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.pagination .current-page {
-    display: inline-block;
-    margin: 0 5px;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* الفوتر */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 25px 0;
-    text-align: center;
-    font-size: 16px;
-}
-
 
 </style>
 <section class="properties-container">
     <h2>قائمة الألبسة</h2>
 
-    <div class="property-grid"><div class="property"><img src="./عرض الألبسة_files/YMz386P.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2/purchase.php?property_id=15&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FYMz386P.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/nEUsE5D.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2/purchase.php?property_id=16&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FnEUsE5D.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/vgrD8V6.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2/purchase.php?property_id=17&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FvgrD8V6.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/o15yJBK.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2/purchase.php?property_id=18&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2Fo15yJBK.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/v3zc1mT.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2/purchase.php?property_id=19&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2Fv3zc1mT.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/GPIfW5f.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2/purchase.php?property_id=20&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FGPIfW5f.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/T7xdbIB.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2/purchase.php?property_id=21&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=+https%3A%2F%2Fi.imgur.com%2FT7xdbIB.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/KDB9mA4.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2/purchase.php?property_id=22&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FKDB9mA4.jpeg" class="btn-buy">شراء</a></div></div></div>
+    <div class="property-grid"><div class="property"><img src="./عرض الألبسة_files/YMz386P.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2PHP/purchase.php?property_id=15&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FYMz386P.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/nEUsE5D.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2PHP/purchase.php?property_id=16&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FnEUsE5D.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/vgrD8V6.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2PHP/purchase.php?property_id=17&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FvgrD8V6.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/o15yJBK.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2PHP/purchase.php?property_id=18&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2Fo15yJBK.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/v3zc1mT.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2PHP/purchase.php?property_id=19&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2Fv3zc1mT.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/GPIfW5f.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2PHP/purchase.php?property_id=20&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FGPIfW5f.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/T7xdbIB.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2PHP/purchase.php?property_id=21&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=+https%3A%2F%2Fi.imgur.com%2FT7xdbIB.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/KDB9mA4.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">من أجود المنتجات</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2PHP/purchase.php?property_id=22&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FKDB9mA4.jpeg" class="btn-buy">شراء</a></div></div><div class="property"><img src="./عرض الألبسة_files/KDB9mA4.jpeg" alt="ألبسة الحور" class="property-image"><div class="property-details"><h3>ألبسة الحور</h3><p class="description">البسة الحور</p><p><strong>السعر:</strong> 1500.00 ج.م</p><p><strong>الموقع:</strong> الجزائر</p><p><strong>النوع:</strong> جديد</p><a href="http://localhost/Shoping2PHP/purchase.php?property_id=23&amp;title=%D8%A3%D9%84%D8%A8%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%88%D8%B1&amp;price=1500.00&amp;image_url=https%3A%2F%2Fi.imgur.com%2FKDB9mA4.jpeg" class="btn-buy">شراء</a></div></div></div>
     <!-- روابط التنقل بين الصفحات -->
     <div class="pagination">
         <span class="current-page">1</span>    </div>
 
 </section>
-
+<script src="./عرض الألبسة_files/script.js.télécharger"></script>
 <footer>
-    <p>© 2024 موقع بيع الألبسة. جميع الحقوق محفوظة.</p>
+    <div class="container">
+        <p>© 2024 موقع بيع المنتوجات. جميع الحقوق محفوظة.</p>
+        <ul>
+            <li><a href="tel:0552656078">اتصل بنا: 0552656078</a></li>
+            <li><a href="mailto:rekabprogrammepc@gmail.com">البريد الإلكتروني: rekabprogrammepc@gmail.com</a></li>
+            <li><a href="https://www.facebook.com/yourpage" target="_blank">فيسبوك</a></li>
+        </ul>
+    </div>
 </footer>
 
 
